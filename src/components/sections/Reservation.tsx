@@ -72,7 +72,12 @@ export function Reservation() {
     e.preventDefault()
     const nextErrors = validate()
     setErrors(nextErrors)
-    if (Object.keys(nextErrors).length > 0) return
+    if (Object.keys(nextErrors).length > 0) {
+      const firstErrorKey = Object.keys(nextErrors)[0]
+      const field = document.getElementById(`res-${firstErrorKey}`)
+      field?.focus()
+      return
+    }
 
     setStatus('submitting')
     window.setTimeout(() => {

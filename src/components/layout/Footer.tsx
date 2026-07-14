@@ -1,7 +1,7 @@
 import { FacebookLogo, InstagramLogo, MapPin, Phone } from '@phosphor-icons/react'
 import { Container } from '../ui/Container'
 import { navLinks, restaurant } from '../../data/restaurant'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.webp'
 
 export function Footer() {
   const year = new Date().getFullYear()

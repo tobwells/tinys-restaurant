@@ -3,7 +3,7 @@ import { List, X, Phone, Bag } from '@phosphor-icons/react'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { navLinks, restaurant } from '../../data/restaurant'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.webp'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -28,7 +28,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 ${
         solid ? 'bg-cream/95 shadow-[0_2px_20px_-6px_rgba(42,29,21,0.15)] backdrop-blur-sm' : 'bg-transparent'
       }`}
     >

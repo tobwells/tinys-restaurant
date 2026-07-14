@@ -1,10 +1,10 @@
-import heroFriedHaddock from '../assets/images/hero-fried-haddock.jpg'
-import chickenSaladRoll from '../assets/images/chicken-salad-roll.jpg'
-import chickenPotPie from '../assets/images/chicken-pot-pie.jpg'
-import lobsterRoll from '../assets/images/lobster-roll.jpg'
-import fishermansPlatter from '../assets/images/fishermans-platter.jpg'
-import primeRib from '../assets/images/prime-rib.jpg'
-import steakTips from '../assets/images/steak-tips.jpg'
+import heroFriedHaddock from '../assets/images/hero-fried-haddock.webp'
+import chickenSaladRoll from '../assets/images/chicken-salad-roll.webp'
+import chickenPotPie from '../assets/images/chicken-pot-pie.webp'
+import lobsterRoll from '../assets/images/lobster-roll.webp'
+import fishermansPlatter from '../assets/images/fishermans-platter.webp'
+import primeRib from '../assets/images/prime-rib.webp'
+import steakTips from '../assets/images/steak-tips.webp'
 
 export interface GalleryImage {
   id: string

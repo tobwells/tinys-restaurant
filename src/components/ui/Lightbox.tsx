@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 import { X, CaretLeft, CaretRight } from '@phosphor-icons/react'
 import type { GalleryImage } from '../../data/gallery'
 
@@ -11,6 +11,8 @@ interface LightboxProps {
 
 export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) {
   const image = images[index]
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   const goPrev = useCallback(
     () => onNavigate((index - 1 + images.length) % images.length),
@@ -19,10 +21,32 @@ export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) 
   const goNext = useCallback(() => onNavigate((index + 1) % images.length), [index, images.length, onNavigate])
 
   useEffect(() => {
+    const previouslyFocused = document.activeElement as HTMLElement | null
+    closeButtonRef.current?.focus()
+    return () => previouslyFocused?.focus()
+  }, [])
+
+  useEffect(() => {
     function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
       if (e.key === 'ArrowLeft') goPrev()
       if (e.key === 'ArrowRight') goNext()
+      if (e.key === 'Tab') {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('button')
+        if (!focusable || focusable.length === 0) return
+        const first = focusable[0]
+        const last = focusable[focusable.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
@@ -36,6 +60,7 @@ export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) 
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
       aria-label={`Photo: ${image.alt}`}
@@ -43,6 +68,7 @@ export function Lightbox({ images, index, onClose, onNavigate }: LightboxProps) 
       onClick={onClose}
     >
       <button
+        ref={closeButtonRef}
         type="button"
         onClick={onClose}
         aria-label="Close gallery"

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#211611" />
 
@@ -15,7 +15,7 @@
       name="keywords"
       content="Tiny's Restaurant, Ayer MA restaurant, restaurant near me, breakfast, lunch, dinner, full bar, family restaurant, home cooked meals, seafood, lobster roll, prime rib"
     />
-    <link rel="canonical" href="https://www.tinysrestaurantayer.com/" />
+    <link rel="canonical" href="https://tinys-restaurant.vercel.app/" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
@@ -25,12 +25,11 @@
       property="og:description"
       content="Family owned restaurant in Ayer, MA serving home-cooked meals at reasonable prices, with a full bar and daily specials."
     />
-    <meta property="og:url" content="https://www.tinysrestaurantayer.com/" />
+    <meta property="og:url" content="https://tinys-restaurant.vercel.app/" />
     <meta property="og:site_name" content="Tiny's Restaurant" />
-    <meta
-      property="og:image"
-      content="https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D80/vrlexksj/b1e52d8c-db35-468b-b5b8-428dd3728ce3"
-    />
+    <meta property="og:image" content="https://tinys-restaurant.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
@@ -40,10 +39,7 @@
       name="twitter:description"
       content="Family owned restaurant in Ayer, MA serving home-cooked meals at reasonable prices, with a full bar and daily specials."
     />
-    <meta
-      name="twitter:image"
-      content="https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D80/vrlexksj/b1e52d8c-db35-468b-b5b8-428dd3728ce3"
-    />
+    <meta name="twitter:image" content="https://tinys-restaurant.vercel.app/og-image.jpg" />
 
     <!-- Local Business / Restaurant structured data (JSON-LD) -->
     <script type="application/ld+json">
@@ -51,8 +47,8 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Tiny's Restaurant",
-        "image": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D80/vrlexksj/b1e52d8c-db35-468b-b5b8-428dd3728ce3",
-        "url": "https://www.tinysrestaurantayer.com/",
+        "image": "https://tinys-restaurant.vercel.app/og-image.jpg",
+        "url": "https://tinys-restaurant.vercel.app/",
         "telephone": "+1-978-772-2917",
         "servesCuisine": ["American", "Comfort Food", "Seafood", "Italian"],
         "priceRange": "$$",
@@ -73,10 +69,84 @@
           { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "16:00" }
         ],
         "acceptsReservations": "True",
-        "menu": "https://www.tinysrestaurantayer.com/#menu",
+        "menu": "https://tinys-restaurant.vercel.app/#menu",
         "sameAs": [
           "https://www.facebook.com/tinysrestaurantayerc",
           "https://www.instagram.com/tinysrestaurant/"
+        ]
+      }
+    </script>
+
+    <!-- FAQ structured data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need a reservation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Walk-ins are always welcome. For larger groups, we recommend calling ahead or using the reservation form on this site so we can have the right table ready for you."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer takeout?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Give us a call and we'll have your order ready for pickup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer delivery?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We don't currently partner with a delivery service, but takeout is always available — just call ahead."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you accommodate large parties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — for parties of 6 or more, please call us directly so we can prepare the right table for your group."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you have a full bar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we have a full bar available to pair with your meal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you have lottery, keno, or scratch tickets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — we offer lottery, keno, daily games, and scratch tickets in house."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you sell gift certificates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, gift certificates are available — just ask a member of our staff."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you accommodate dietary restrictions or allergies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We've labeled vegetarian and gluten-free items on our menu where we can. If you have a food allergy, please let your server know before ordering so our kitchen can do its best to help."
+            }
+          }
         ]
       }
     </script>

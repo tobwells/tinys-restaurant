@@ -2,7 +2,8 @@ import { ForkKnife, Phone, MapPin, Clock, NavigationArrow } from '@phosphor-icon
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { restaurant } from '../../data/restaurant'
-import heroImage from '../../assets/images/hero-fried-haddock.jpg'
+import heroImage from '../../assets/images/hero-fried-haddock.webp'
+import heroImageMobile from '../../assets/images/hero-fried-haddock-mobile.webp'
 
 const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' })
 
@@ -14,6 +15,8 @@ export function Hero() {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImage}
+          srcSet={`${heroImageMobile} 900w, ${heroImage} 1800w`}
+          sizes="100vw"
           alt="A fried haddock plate with french fries, coleslaw and tartar sauce at Tiny's Restaurant"
           className="h-full w-full object-cover"
           fetchPriority="high"

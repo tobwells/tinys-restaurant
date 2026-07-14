@@ -19,7 +19,7 @@ export function HomePage() {
         Skip to main content
       </a>
       <Navbar />
-      <main id="main" className="pb-20 lg:pb-0">
+      <main id="main" className="pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0">
         <Hero />
         <FeaturedDishes />
         <About />

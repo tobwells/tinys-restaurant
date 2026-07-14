@@ -1,6 +1,6 @@
 import { House, Wine, CalendarBlank, HandHeart, Ticket, Gift } from '@phosphor-icons/react'
 import { Container } from '../ui/Container'
-import primeRibImage from '../../assets/images/prime-rib.jpg'
+import primeRibImage from '../../assets/images/prime-rib.webp'
 
 const highlights = [
   {
